@@ -9,10 +9,12 @@ resource "google_bigquery_dataset" "default" {
   default_table_expiration_ms = 3600000
 }
 
-// create table
+// Create table based on the dataset
 resource "google_bigquery_table" "default" {
   dataset_id = google_bigquery_dataset.default.dataset_id
   table_id   = var.table_id
+
+  deletion_protection = false
 
   time_partitioning {
     type = "DAY"
