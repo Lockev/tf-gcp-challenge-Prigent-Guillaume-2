@@ -5,7 +5,7 @@ resource "google_monitoring_dashboard" "dashboard" {
   "gridLayout": {
     "widgets": [
       {
-        "title": "Widget 1",
+        "title": "Cloud function invocations",
         "xyChart": {
           "dataSets": [{
             "timeSeriesQuery": {
@@ -28,12 +28,12 @@ resource "google_monitoring_dashboard" "dashboard" {
       },
       {
         "text": {
-          "content": "Widget 2",
+          "content": "This is a text widget.",
           "format": "MARKDOWN"
         }
       },
       {
-        "title": "Widget 3",
+        "title": "Amount of memes created",
         "xyChart": {
           "dataSets": [{
             "timeSeriesQuery": {
