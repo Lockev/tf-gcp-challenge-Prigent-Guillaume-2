@@ -1,10 +1,4 @@
 terraform {
-    // define where the backend can find its source code
-#   backend "gcs" {
-#     bucket  = "tf-gcp-challenge-prigent-g"
-#     prefix  = "terraform/state"
-#   }
-
   // define the required providers
   required_providers {
     google = {
@@ -15,12 +9,12 @@ terraform {
 
 // define the google configuration variables
 provider "google" {
-    credentials = "${file("credentials.json")}"
+  credentials = "${file("credentials.json")}"
 
-    version = "4.63.1"
-    project = var.project
-    region  = var.gcp_region
-    zone    = var.gcp_zone
+  version = "4.63.1"
+  project = var.project
+  region  = var.gcp_region
+  zone    = var.gcp_zone
 }
 
 // define on which vpc_network the project will be deployed
