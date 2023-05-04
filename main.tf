@@ -41,3 +41,8 @@ module "cloud_functions" {
 module "biq_query" {
   source = "./modules/big_query"
 }
+
+// Create stack driver dashboard
+module "stack_driver" {
+  source = "./modules/stack_driver"
+}
